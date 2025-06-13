@@ -1,0 +1,25 @@
+<!-- verify_otp.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verify OTP</title>
+    <link rel="stylesheet" href="login_page.css">
+</head>
+<body>
+    <div class="loginContainer">
+        <div class="loginHeader">
+            <h1 class="loginTitle">OTP Verification</h1>
+            <p class="loginDescription">Enter the OTP sent to your device</p>
+        </div>
+        <form class="loginForm" action="verify_otp.php" method="POST">
+            <div class="formGroup">
+                <label for="otp" class="inputLabel">Enter OTP</label>
+                <input type="text" name="otp" class="inputField" required>
+            </div>
+            <button type="submit" class="loginButton">Verify</button>
+            <input type="checkbox" name="remember">Remember me
+        </form>
+    </div>
+</body>
+</html>

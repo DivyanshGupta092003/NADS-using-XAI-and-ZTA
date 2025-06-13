@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login_page.css">
+    <script src="https://openfpcdn.io/fingerprintjs/v3"></script>
+    <style>
+        .loggingIn {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        .loginButton.loading::after {
+            content: '...';
+            animation: dots 1s steps(3, end) infinite;
+        }
+        @keyframes dots {
+            0%, 20% {
+                content: '';
+            }
+            40% {
+                content: '.';
+            }
+            60% {
+                content: '..';
+            }
+            100% {
+                content: '...';
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loginContainer">
+        <div class="loginHeader">
+            <h1 class="loginTitle">Login</h1>
+            <p class="loginDescription">Enter your credentials to access your account</p>
+        </div>
+        
+        <form id="loginForm" class="loginForm" action="./auth.php" method="post">
+            <div class="formGroup">
+                <label for="usernameInput" class="inputLabel">Username</label>
+                <input 
+                    type="text" 
+                    name="usernameInput" 
+                    id="usernameInput" 
+                    class="inputField"
+                    placeholder="Enter your username" 
+                    required
+                >
+                <p id="usernameError" class="errorMessage">Username is required</p>
+            </div>
+            
+            <div class="formGroup">
+                <label for="passwordInput" class="inputLabel">Password</label>
+                <input 
+                    type="password" 
+                    name="passwordInput"
+                    id="passwordInput" 
+                    class="inputField" 
+                    placeholder="Enter your password" 
+                    required
+                >
+                <p id="passwordError" class="errorMessage">Password is required</p>
+                <a href="./signup_page.html">Sign Up</a>
+            </div>
+            <input type="checkbox" onclick="togglepass()">Show Password
+            <!-- ZTA enhancement: Hidden deviceId field -->
+            <input type="hidden" name="deviceId" id="deviceId">
+
+            <button type="submit" id="loginButton" class="loginButton">Login</button>
+        </form>
+    </div>
+
+    <script>
+        function togglepass(){
+            var pass = document.getElementById("passwordInput");
+            if(pass.type === "password"){
+                pass.type = "text";
+            }
+            else{
+                pass.type = "password";
+            }
+        }
+        // Load FingerprintJS and get the device ID
+        FingerprintJS.load().then(fp => {
+            fp.get().then(result => {
+                document.getElementById('deviceId').value = result.visitorId;
+            });
+        });
+    </script>
+</body>
+</html>

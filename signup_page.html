@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="login_page.css">
+    <script src="https://openfpcdn.io/fingerprintjs/v3"></script>
+</head>
+<body>
+    <div class="loginContainer">
+        <div class="loginHeader">
+            <h1 class="loginTitle">Sign UP</h1>
+            <p class="loginDescription">Enter your credentials to create an account.</p>
+        </div>
+        
+        <form id="signupForm" class="loginForm" action="./signup.php" method="post">
+            <div class="formGroup">
+                <label for="usernameInput" class="inputLabel">Username</label>
+                <input 
+                    type="text" 
+                    name="usernameInput" 
+                    id="usernameInput" 
+                    class="inputField"
+                    placeholder="Enter your username" 
+                    required
+                >
+            </div>
+            
+            <div class="formGroup">
+                <label for="passwordInput" class="inputLabel">Password</label>
+                <input 
+                    type="password" 
+                    name="passwordInput"
+                    id="passwordInput" 
+                    class="inputField" 
+                    placeholder="Enter your password" 
+                    required
+                >
+            </div>
+
+            <!-- Hidden device ID field for ZTA -->
+            <input type="hidden" name="deviceId" id="deviceId">
+
+            <button type="submit" id="loginButton" class="loginButton">Sign Up</button>
+        </form>
+    </div>
+
+    <script>
+        // Load FingerprintJS and capture device fingerprint
+        FingerprintJS.load().then(fp => {
+            fp.get().then(result => {
+                document.getElementById('deviceId').value = result.visitorId;
+            });
+        });
+    </script>
+</body>
+</html>
