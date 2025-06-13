@@ -1,1 +1,3 @@
-# NADS-using-XAI-and-ZTA
+Hello Everyone,
+Sophisticated detection mechanisms are required because of the advanced nature of cyber attacks. Explainable Artificial Intelligence (XAI) brings interpretability
+and transparency to AI-based Intrusion Detection Systems (IDS), whereas Zero Trust Architecture (ZTA) is a paradigm shift towards network protection. This paper explores the integration of XAI and ZTA for anomaly detection, reviewing recent frameworks and their applicability to modern network environments. With the incorporation of trustless network models and explainable AI, we propose an open and secure method towards threat detection and countermeasures.
