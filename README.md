@@ -5,10 +5,9 @@
 Sophisticated detection mechanisms are essential due to the increasingly advanced nature of cyberattacks. This project introduces a novel approach by combining **Explainable Artificial Intelligence (XAI)** and **Zero Trust Architecture (ZTA)** to enhance the **efficiency, transparency, and reliability** of AI-based Intrusion Detection Systems (IDS).
 
 This is the **first project** to integrate both XAI and ZTA into a unified anomaly detection framework, aiming to provide a robust, interpretable, and trustless model for detecting and mitigating threats in modern network environments.
-
 ---
 
-## 🔍 Key Concepts
+## Key Concepts
 
 - **Zero Trust Architecture (ZTA)**  
   A network security paradigm that assumes no implicit trust, enforcing strict identity verification and least privilege access principles.
@@ -21,7 +20,7 @@ This is the **first project** to integrate both XAI and ZTA into a unified anoma
 
 ---
 
-## 🎯 Objectives
+## Objectives
 
 - Evaluate and review recent frameworks combining AI with cybersecurity.
 - Apply Zero Trust principles to isolate and control network access.
@@ -30,7 +29,7 @@ This is the **first project** to integrate both XAI and ZTA into a unified anoma
 
 ---
 
-## ⚙️ Features
+## Features
 
 -  Transparent AI-based anomaly detection
 -  Trustless and context-aware access evaluation
@@ -39,13 +38,13 @@ This is the **first project** to integrate both XAI and ZTA into a unified anoma
 
 ---
 
-## 📌 Goal
+## Goal
 
 To build an **open, explainable, and secure system** that not only detects but actively **prevents** cybersecurity threats using the power of **XAI and ZTA**—ushering in a next-generation defense mechanism against sophisticated attacks.
 
 ---
 
-## 🧠 Skills & Tools
+## Skills & Tools
 
 - Python
 - Machine Learning
@@ -55,15 +54,15 @@ To build an **open, explainable, and secure system** that not only detects but a
 
 ---
 
-## 📁 Structure
+## Structure
 
 ```bash
-📦XAI-ZTA-NADS
- ┣ 📂src
- ┃ ┣ 📜model.py
- ┃ ┣ 📜xai_utils.py
- ┃ ┗ 📜zta_control.py
- ┣ 📂data
- ┃ ┗ 📜network_logs.csv
- ┣ 📜README.md
- ┗ 📜requirements.txt
+XAI-ZTA-NADS
+ ┣ src
+ ┃ ┣ model.py
+ ┃ ┣ xai_utils.py
+ ┃ ┗ zta_control.py
+ ┣ data
+ ┃ ┗ network_logs.csv
+ ┣ README.md
+ ┗ requirements.txt
